@@ -1,7 +1,3 @@
-//The Player then checks for a Option. They are No Play, Ladder or Snake.
-package com.bridgelabz;
-
-import java.util.Random;
 
 public class SnakeLadder {
     public static void main(String[] args) {
@@ -9,6 +5,7 @@ public class SnakeLadder {
         System.out.println("The player starts from position zero");
 
         Random rnum = new Random();
+
         int diceRoll = rnum.nextInt(6) + 1;
 
         int options = rnum.nextInt(3);
