@@ -5,19 +5,32 @@ public class SnakeLadder {
         System.out.println("The player starts from position zero");
 
         Random rnum = new Random();
+        int sum = 0, position = 0, options, diceRoll = 0;
 
-        int diceRoll = rnum.nextInt(6) + 1;
+        while (sum < 101) {
 
-        int options = rnum.nextInt(3);
-        switch (options) {
-            case 0:
-                System.out.println("Player will stay on the position");
-                break;
-            case 1:
-                System.out.println("Player moves ahead with : " + diceRoll + " number");
-                break;
-            default:
-                System.out.println("Player moves behind : " + diceRoll + " number");
+            options = rnum.nextInt(3);
+            diceRoll = rnum.nextInt(6) + 1;
+
+            switch (options) {
+
+                case 0:
+                    position = 0;
+                    break;
+                case 1:
+                    position = -diceRoll;
+                    break;
+                case 2:
+                    position = diceRoll;
+                    break;
+
+            }
+            sum += position;
+
+            if (sum <= 0)
+                sum = 0;
         }
+        System.out.println("Player has reached winning position ");
+
     }
 }
