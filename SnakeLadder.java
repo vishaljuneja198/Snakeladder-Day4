@@ -1,8 +1,3 @@
-//Repeat till the Player reaches the winning position 100.
-
-package com.bridgelabz;
-
-import java.util.Random;
 
 public class SnakeLadder {
     public static void main(String[] args) {
@@ -36,5 +31,6 @@ public class SnakeLadder {
                 sum = 0;
         }
         System.out.println("Player has reached winning position ");
+
     }
 }
