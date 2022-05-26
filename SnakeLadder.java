@@ -1,13 +1,14 @@
+
 //Play the game with 2 Player. In this case if a Player gets a Ladder then plays again. Finally report which Player won the game
 package com.bridgelabz;
 import java.util.Random;
-
 public class SnakeLadder {
     public static void main(String[] args) {
         System.out.println("Welcome to Snake and Ladder Simulator");
         System.out.println("The player starts from position zero");
 
         Random rnum = new Random();
+
 
         int diceRoll = 0, sum1 = 0, sum2 = 0, position = 0, options, pos = 0, timesDiceRoll = 0, turn = 0;
         int positionAgain = 0;
@@ -80,6 +81,33 @@ public class SnakeLadder {
             System.out.println("Player A has won the game");
         } else
             System.out.println("player B has won the game");
+        int sum = 0, position = 0, options, diceRoll = 0;
+
+        while (sum < 101) {
+
+            options = rnum.nextInt(3);
+            diceRoll = rnum.nextInt(6) + 1;
+
+            switch (options) {
+
+                case 0:
+                    position = 0;
+                    break;
+                case 1:
+                    position = -diceRoll;
+                    break;
+                case 2:
+                    position = diceRoll;
+                    break;
+
+            }
+            sum += position;
+
+            if (sum <= 0)
+                sum = 0;
+        }
+        System.out.println("Player has reached winning position ");
+
 
     }
 }
